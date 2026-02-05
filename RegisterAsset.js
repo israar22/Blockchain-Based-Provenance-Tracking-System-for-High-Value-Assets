@@ -20,7 +20,7 @@ function RegisterAsset() {
   const [message, setMessage] = useState(""); 
   async function registerAsset() { 
     try { 
-62 
+ 
  
       setMessage("Connecting to wallet..."); 
       const web3Modal = new Web3Modal(); 
@@ -45,7 +45,6 @@ signer);
     <Container maxWidth="sm" style={{ marginTop: 20, textAlign: "center" }}> 
       <Typography variant="h5">Register Asset</Typography> 
       <TextField 
-63 
  
         fullWidth 
         label="Metadata URI" 
