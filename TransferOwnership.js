@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Web3Modal from "web3modal"; 
  
 // ABI for AssetTracking contract (simplified) 
-64 
+ 
  
 const ASSET_ABI = [ 
   "function approve(address to, uint256 tokenId) external", 
@@ -30,7 +30,7 @@ const TransferOwnership = () => {
     return ethers.isAddress(address); 
   }; 
   // Check approval status and ownership 
-65 
+ 
  
   const checkPermissions = async () => { 
     if (!assetId || !newOwner || !isValidAddress(newOwner)) return; 
@@ -54,7 +54,7 @@ const TransferOwnership = () => {
       ); 
       // Verify contract linkage 
       const linkedAssetContract = await ownershipContract.assetContract(); 
-66 
+ 
  
       if (linkedAssetContract.toLowerCase() !== 
 process.env.REACT_APP_ASSET_CONTRACT.toLowerCase()) { 
@@ -80,7 +80,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
       }); 
     } finally { 
       setLoading(false); 
-67 
+
  
     } 
   }; 
@@ -105,7 +105,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
         process.env.REACT_APP_OWNERSHIP_CONTRACT, 
         assetId 
       ); 
-68 
+
  
       await tx.wait(); 
  
@@ -130,7 +130,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
       const web3Modal = new Web3Modal(); 
       const instance = await web3Modal.connect(); 
       const provider = new ethers.BrowserProvider(instance); 
-69 
+ 
  
       const signer = await provider.getSigner(); 
  
@@ -155,7 +155,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
     } finally { 
       setLoading(false); 
     } 
-70 
+ 
  
   }; 
   // Check permissions when inputs change 
@@ -180,7 +180,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
       <TextField 
         fullWidth 
         label="Asset ID" 
-71 
+
  
         variant="outlined" 
         value={assetId} 
@@ -205,7 +205,7 @@ process.env.REACT_APP_OWNERSHIP_CONTRACT.toLowerCase());
           disabled={!isOwner || isApproved || loading} 
           sx={{ flex: 1 }} 
         > 
-72 
+ 
  
           {isApproved ? "✓ Approved" : "Approve"} 
         </Button> 
