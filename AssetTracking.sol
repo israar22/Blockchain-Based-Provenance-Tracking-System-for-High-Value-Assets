@@ -20,7 +20,7 @@ Ownable(initialOwner) {}
  
         emit AssetRegistered(msg.sender, newAssetId, metadataURI);  
  
-53 
+
  
         return newAssetId; 
     } 
