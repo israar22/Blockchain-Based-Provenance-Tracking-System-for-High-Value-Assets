@@ -8,7 +8,7 @@ contract OwnershipTransfer is Ownable {
  
     struct TransferRecord { 
         address from; 
-54 
+ 
  
         address to; 
         uint256 assetId; 
@@ -33,7 +33,7 @@ contract OwnershipTransfer is Ownable {
         require(to != address(0), "Invalid new owner address"); 
  
         // Check approval status 
-55 
+ 
  
         require( 
             assetContract.getApproved(assetId) == address(this) || 
